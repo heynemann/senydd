@@ -1,0 +1,7 @@
+{
+  "generator-react-webpack": {
+    "appName": "senydd",
+    "style": "scss",
+    "postcss": true
+  }
+}
