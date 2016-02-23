@@ -7,17 +7,15 @@ import React from 'react';
 import createComponent from 'helpers/shallowRenderHelper';
 import {expect} from '../assertions';
 
+import HeaderComponent from 'components/Header';
 import IndexComponent from 'components/Main';
 
 describe('MainComponent', () => {
-  it('should have its component name as default className', () => {
+  it('should have the header component', () => {
     let comp = createComponent(<IndexComponent />);
 
-    expect(comp).to.equalJSX(
-      <div className="index">
-        Hello Senydd!
-      </div>
+    expect(comp).to.includeJSX(
+      <HeaderComponent />
     )
-    expect(comp.props.className).to.equal('index');
   });
 });

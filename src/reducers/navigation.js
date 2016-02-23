@@ -20,7 +20,7 @@ module.exports = function(state = initialState, action) {
 
     default: {
       /* Return original state if no actions were consumed. */
-      return state;
+      return nextState;
     }
   }
 }

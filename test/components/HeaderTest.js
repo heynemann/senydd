@@ -7,17 +7,26 @@ import React from 'react';
 import createComponent from 'helpers/shallowRenderHelper';
 import {expect} from '../assertions';
 
-import IndexComponent from 'components/Main';
+import { Navbar, Nav, NavItem } from 'react-bootstrap';
+import HeaderComponent from 'components/Header';
 
-describe('MainComponent', () => {
-  it('should have its component name as default className', () => {
-    let comp = createComponent(<IndexComponent />);
+describe('HeaderComponent', () => {
+  it('should have brand navigation', () => {
+    let comp = createComponent(<HeaderComponent />);
 
-    expect(comp).to.equalJSX(
-      <div className="index">
-        Hello Senydd!
-      </div>
+    expect(comp).to.includeJSX(
+      <Navbar.Header>
+        <Navbar.Brand>
+          <a href="#/">Tales of Senydd</a>
+        </Navbar.Brand>
+      </Navbar.Header>
     )
-    expect(comp.props.className).to.equal('index');
+
+    expect(comp).to.includeJSX(
+      <Nav>
+        <NavItem eventKey={1} onClick={function(){}} href="#/">Home</NavItem>
+        <NavItem eventKey={2} onClick={function(){}} href="#/new">New Game</NavItem>
+      </Nav>
+    )
   });
 });
