@@ -1,3 +1,4 @@
 module.exports = function(path) {
-  return { type: 'CHANGE_ROUTE', path };
+  let newPath = '#'.concat(path.replace('#', ''));
+  return { type: 'CHANGE_ROUTE', path: newPath};
 };
